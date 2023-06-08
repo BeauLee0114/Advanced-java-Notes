@@ -1,8 +1,23 @@
-package Thread.ThreadTest02;/**
-* Created by IntelliJ IDEA.
-* @Author : 李博
-* @Description
-* @create 2023/5/26 09:13
-* @Modified By
-*/public class IncrementThread {
+package Thread.ThreadTest02;
+
+/**
+ * Created by IntelliJ IDEA.
+ *
+ * @Author : 李博
+ * @Description
+ * @create 2023/5/26 09:13
+ * @Modified By
+ */
+public class IncrementThread implements Runnable{
+    private SharedResource resource;
+
+    public IncrementThread(SharedResource resource) {
+        this.resource = resource;
+    }
+    @Override
+    public void run() {
+        for (int i = 0; i <5; i++) {
+            resource.increment();
+        }
+    }
 }
